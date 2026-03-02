@@ -1,73 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Auto Lux Detailing | Spring Valley CA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0b0b;
-      color: #f5f5f5;
+      background: #0b0b0b;
+      color: #f2f2f2;
       line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(180deg, #160000, #000);
-      padding: 90px 20px;
-      text-align: center;
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    header h1 {
-      font-size: 3rem;
+    nav h1 {
       color: darkred;
-      margin-bottom: 10px;
       letter-spacing: 2px;
     }
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 650px;
+    nav a {
+      color: #ddd;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover { color: darkred; }
+
+    /* HERO */
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+        url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9") center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: darkred;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
       margin: auto;
       color: #ccc;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin: 25px 10px 0;
       padding: 14px 30px;
       background: darkred;
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      font-size: 1.05rem;
     }
 
+    /* SECTIONS */
     section {
-      padding: 65px 20px;
-      max-width: 1100px;
+      padding: 70px 25px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    h2 {
+    h3 {
       text-align: center;
       color: darkred;
-      margin-bottom: 45px;
-      font-size: 2.1rem;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
     }
 
-    .about {
-      text-align: center;
-      max-width: 750px;
-      margin: auto;
-      color: #ddd;
-      font-size: 1.05rem;
-    }
-
-    .packages {
+    /* SERVICES */
+    .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
@@ -78,29 +102,34 @@
       border: 1px solid #2a2a2a;
       padding: 30px;
       border-radius: 12px;
+      text-align: center;
     }
 
-    .card h3 {
+    .card h4 {
       color: darkred;
       margin-bottom: 10px;
       font-size: 1.4rem;
     }
 
     .price {
-      font-size: 2.2rem;
-      font-weight: bold;
-      margin-bottom: 18px;
+      font-size: 2rem;
+      margin: 10px 0 20px;
     }
 
-    ul {
-      padding-left: 18px;
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
     }
 
-    ul li {
-      margin-bottom: 9px;
-      color: #ccc;
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
     }
 
+    /* WHY US */
     .why {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -115,117 +144,114 @@
       border: 1px solid #2a2a2a;
     }
 
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
     footer {
       background: #000;
       text-align: center;
-      padding: 45px 20px;
-    }
-
-    footer p {
+      padding: 40px 20px;
       color: #aaa;
-      margin: 8px 0;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.3rem;
-      }
+      .hero h2 { font-size: 2.2rem; }
+      nav { flex-direction: column; }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Auto Lux Detailing</h1>
-  <p>Premium auto detailing in Spring Valley, CA. Clean, sharp, luxury-level results.</p>
-  <a href="tel:6192544103" class="btn">Call or Text: (619) 254-4103</a>
-</header>
+<!-- NAV -->
+<nav>
+  <h1>Auto Lux</h1>
+  <div>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:6192544103">Book Now</a>
+  </div>
+</nav>
 
-<section>
-  <h2>About Auto Lux Detailing</h2>
-  <p class="about">
-    Auto Lux Detailing is a locally owned detailing business focused on quality,
-    consistency, and attention to detail. Every vehicle is treated with care and pride,
-    whether it needs a quick refresh or a full deep clean. Our goal is simple — make
-    your car look its absolute best.
-  </p>
-</section>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h2>Premium Auto Detailing</h2>
+    <p>Luxury-level interior & exterior detailing in Spring Valley, CA.</p>
+    <a href="tel:6192544103" class="btn">Call / Text</a>
+    <a href="#services" class="btn">View Services</a>
+  </div>
+</div>
 
-<section>
-  <h2>Detailing Packages</h2>
+<!-- SERVICES -->
+<section id="services">
+  <h3>Detailing Packages</h3>
 
-  <div class="packages">
-
+  <div class="services">
     <div class="card">
-      <h3>Basic Package</h3>
+      <h4>Basic Detail</h4>
       <div class="price">$20</div>
-      <ul>
-        <li>Hand wash (2-bucket method)</li>
-        <li>Wheel & tire cleaning + shine</li>
-        <li>Exterior glass cleaned</li>
-        <li>Light interior vacuum</li>
-        <li>Dash & console wipe-down</li>
-        <li>Door jamb wipe</li>
-        <li>⏱ 30–45 minutes</li>
-      </ul>
+      <p>Quick maintenance wash & light interior clean.</p>
     </div>
 
     <div class="card">
-      <h3>Standard Package</h3>
+      <h4>Standard Detail</h4>
       <div class="price">$40</div>
-      <ul>
-        <li>Everything in Basic</li>
-        <li>Deep wheel cleaning (faces + barrels)</li>
-        <li>Stronger interior vacuum</li>
-        <li>Interior wipe-down with APC</li>
-        <li>Cupholder & door panel cleaning</li>
-        <li>Streak-free interior & exterior glass</li>
-        <li>Fresh scent</li>
-        <li>⏱ 1.5–2 hours</li>
-      </ul>
+      <p>Deeper interior & exterior cleaning with shine.</p>
     </div>
 
     <div class="card">
-      <h3>Premium Package</h3>
+      <h4>Premium Detail</h4>
       <div class="price">$90</div>
-      <ul>
-        <li>Everything in Standard</li>
-        <li>Heavy foam wash</li>
-        <li>Bug & tar removal</li>
-        <li>Full interior scrub (vents, trim, plastics)</li>
-        <li>Seat & floor mat stain treatment</li>
-        <li>Leather clean & condition (if applicable)</li>
-        <li>Spray sealant for added gloss</li>
-        <li>⏱ 2.5–4 hours</li>
-      </ul>
+      <p>Full restoration-style detail for maximum results.</p>
     </div>
-
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <h3>Before & After</h3>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+    <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9">
+    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d">
+  </div>
+</section>
+
+<!-- WHY US -->
 <section>
-  <h2>Why Choose Auto Lux?</h2>
+  <h3>Why Choose Auto Lux</h3>
 
   <div class="why">
     <div>
-      <h3>Detail Focused</h3>
-      <p>No rushed jobs — every detail matters.</p>
+      <h4>Detail Focused</h4>
+      <p>Every vehicle is treated with precision and care.</p>
     </div>
     <div>
-      <h3>Reliable Service</h3>
-      <p>Honest work with consistent results.</p>
+      <h4>Reliable Service</h4>
+      <p>Consistent results, no shortcuts.</p>
     </div>
     <div>
-      <h3>Local & Motivated</h3>
-      <p>Proudly serving Spring Valley with passion and pride.</p>
+      <h4>Local & Driven</h4>
+      <p>Proudly serving Spring Valley, CA.</p>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>📍 1111 Grand Ave, Spring Valley, CA, USA</p>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h3>Contact Us</h3>
+  <p>📍 1111 Grand Ave, Spring Valley, CA</p>
   <p>📞 (619) 254-4103</p>
+  <a href="tel:6192544103" class="btn">Book Now</a>
+</section>
+
+<footer>
   <p>© 2026 Auto Lux Detailing</p>
 </footer>
 
